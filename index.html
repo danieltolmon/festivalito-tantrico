@@ -28,7 +28,7 @@
   }
 
   *,*::before,*::after{ box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
+  html{ scroll-behavior:smooth; overflow-x:hidden; max-width:100%; }
   @media (prefers-reduced-motion: reduce){
     html{ scroll-behavior:auto; }
     *,*::before,*::after{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
@@ -36,6 +36,8 @@
 
   body{
     margin:0;
+    overflow-x:hidden;
+    max-width:100%;
     background:var(--ink);
     color:var(--parchment);
     font-family:var(--body);
