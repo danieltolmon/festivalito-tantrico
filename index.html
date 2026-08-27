@@ -330,16 +330,15 @@
   /* pricing */
   .price-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; margin-bottom:28px; }
   .price-card{ border-radius:18px; padding:30px 28px; border:1px solid rgba(220,187,138,0.25); position:relative; }
-  .price-card.early{ background:linear-gradient(160deg, rgba(207,122,44,0.22), rgba(207,122,44,0.03)); border-color:var(--ember); }
-  .price-card.base{ background:rgba(255,255,255,0.02); }
-  .price-flag{ position:absolute; top:-12px; right:20px; background:var(--ember); color:var(--ink); font-family:var(--label); font-weight:800; text-transform:uppercase; letter-spacing:0.06em; font-size:0.7rem; padding:4px 12px; border-radius:999px; }
+  .price-card.early{ background:rgba(255,255,255,0.02); opacity:0.7; }
+  .price-card.early .price-amount, .price-card.early .price-tag{ text-decoration:line-through; text-decoration-color:var(--gold-dim); }
+  .price-card.base{ background:linear-gradient(160deg, rgba(207,122,44,0.22), rgba(207,122,44,0.03)); border-color:var(--ember); }
+  .price-flag{ position:absolute; top:-12px; right:20px; font-family:var(--label); font-weight:800; text-transform:uppercase; letter-spacing:0.06em; font-size:0.7rem; padding:4px 12px; border-radius:999px; }
+  .price-card.early .price-flag{ background:var(--gold-dim); color:var(--ink); }
+  .price-card.base .price-flag{ background:var(--ember); color:var(--ink); }
   .price-tag{ font-family:var(--label); text-transform:uppercase; letter-spacing:0.08em; font-size:1rem; color:var(--gold); }
   .price-amount{ font-family:var(--display); font-weight:800; font-size:3.6rem; color:var(--parchment); margin-top:6px; }
   .price-when{ margin-top:4px; color:var(--parchment-dim); font-size:1.05rem; }
-  .countdown{ display:flex; gap:14px; margin-top:18px; }
-  .countdown div{ text-align:center; }
-  .countdown .n{ font-family:var(--label); font-weight:800; font-size:1.9rem; color:var(--ember-bright); font-variant-numeric:tabular-nums; }
-  .countdown .u{ font-family:var(--label); font-size:0.75rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--parchment-dim); display:block; }
   .price-note{ color:var(--parchment-dim); max-width:64ch; }
   .price-note + .price-note{ margin-top:10px; }
   .price-cta{ margin-top:26px; }
@@ -526,22 +525,18 @@
           <div class="price-flag" data-i18n="earlybird_flag">Último día</div>
           <div class="price-tag" data-i18n="earlybird_label">Early Bird</div>
           <div class="price-amount">89€</div>
-          <div class="price-when" data-i18n="earlybird_until">Hasta hoy, 26 de agosto</div>
-          <div class="countdown" id="countdown">
-            <div><span class="n" id="cd-d">–</span><span class="u" id="cd-d-l">días</span></div>
-            <div><span class="n" id="cd-h">–</span><span class="u" id="cd-h-l">horas</span></div>
-            <div><span class="n" id="cd-m">–</span><span class="u" id="cd-m-l">min</span></div>
-            <div><span class="n" id="cd-s">–</span><span class="u" id="cd-s-l">seg</span></div>
-          </div>
+          <div class="price-when" data-i18n="earlybird_until">Terminó el 26 de agosto</div>
         </div>
         <div class="price-card base">
+          <div class="price-flag" data-i18n="base_flag">Precio actual</div>
           <div class="price-tag" data-i18n="base_label">Entrada General</div>
           <div class="price-amount">108€</div>
           <div class="price-when" data-i18n="base_from">A partir de mañana</div>
         </div>
       </div>
       <p class="price-note reveal" data-i18n="pricing_note">Ven solx, en pareja o en grupo. El registro se realiza en Luma y requiere aprobación previa de la organización.</p>
-      <p class="price-note reveal" data-i18n="pricing_note2">Condiciones especiales para grupos de 3 o más personas y para terapeutas o facilitadorxs de tantra. También puedes asegurar el precio Early Bird abonando solo el 30% del importe.</p>
+      <p class="price-note reveal" data-i18n="pricing_note2">Condiciones especiales para grupos de 3 o más personas y para terapeutas o facilitadorxs de tantra. También puedes asegurar tu plaza abonando solo el 30% del importe.</p>
+      <p class="price-note reveal" data-i18n="pricing_note3">Si tienes dificultades económicas, siempre puedes escribirnos contándonos tu caso y vemos qué podemos hacer.</p>
       <div class="price-cta reveal">
         <a class="btn" href="https://luma.com/vf2zavlx" target="_blank" rel="noopener" data-i18n="pricing_cta">Reservar en Luma</a>
       </div>
@@ -682,16 +677,16 @@
       gallery_heading:"Así se siente la red",
       pricing_eyebrow:"Reserva tu plaza",
       pricing_heading:"Precios e inscripción",
-      earlybird_flag:"Último día",
+      earlybird_flag:"Ya pasado",
       earlybird_label:"Early Bird",
-      earlybird_until:"Hasta hoy, 26 de agosto",
+      earlybird_until:"Terminó el 26 de agosto",
+      base_flag:"Precio actual",
       base_label:"Entrada General",
-      base_from:"A partir de mañana",
+      base_from:"Disponible ahora",
       pricing_note:"Ven solx, en pareja o en grupo. El registro se realiza en Luma y requiere aprobación previa de la organización.",
-      pricing_note2:"Condiciones especiales para grupos de 3 o más personas y para terapeutas o facilitadorxs de tantra. También puedes asegurar el precio Early Bird abonando solo el 30% del importe.",
+      pricing_note2:"Condiciones especiales para grupos de 3 o más personas y para terapeutas o facilitadorxs de tantra. También puedes asegurar tu plaza abonando solo el 30% del importe.",
+      pricing_note3:"Si tienes dificultades económicas, siempre puedes escribirnos contándonos tu caso y vemos qué podemos hacer.",
       pricing_cta:"Reservar en Luma",
-      cd_labels:["días","horas","min","seg"],
-      cd_ended:"El Early Bird ha terminado",
       location_eyebrow:"Dónde",
       location_heading:"Centro Cenit, Gràcia",
       location_address:"Carrer de la Mare de Déu dels Desemparats, 5 · 08012 Barcelona",
@@ -784,16 +779,16 @@
       gallery_heading:"Així se sent la xarxa",
       pricing_eyebrow:"Reserva la teva plaça",
       pricing_heading:"Preus i inscripció",
-      earlybird_flag:"Últim dia",
+      earlybird_flag:"Ja ha passat",
       earlybird_label:"Early Bird",
-      earlybird_until:"Fins avui, 26 d'agost",
+      earlybird_until:"Va acabar el 26 d'agost",
+      base_flag:"Preu actual",
       base_label:"Entrada General",
-      base_from:"A partir de demà",
+      base_from:"Disponible ara",
       pricing_note:"Vine solx, en parella o en grup. La inscripció es fa a Luma i requereix aprovació prèvia de l'organització.",
-      pricing_note2:"Condicions especials per a grups de 3 o més persones i per a terapeutes o facilitadores de tantra. També pots assegurar el preu Early Bird abonant només el 30% de l'import.",
+      pricing_note2:"Condicions especials per a grups de 3 o més persones i per a terapeutes o facilitadores de tantra. També pots assegurar la teva plaça abonant només el 30% de l'import.",
+      pricing_note3:"Si tens dificultats econòmiques, sempre pots escriure'ns explicant-nos el teu cas i veiem què podem fer.",
       pricing_cta:"Reserva a Luma",
-      cd_labels:["dies","hores","min","seg"],
-      cd_ended:"L'Early Bird ha finalitzat",
       location_eyebrow:"On",
       location_heading:"Centre Cenit, Gràcia",
       location_address:"Carrer de la Mare de Déu dels Desemparats, 5 · 08012 Barcelona",
@@ -886,16 +881,16 @@
       gallery_heading:"This is what the network feels like",
       pricing_eyebrow:"Reserve your spot",
       pricing_heading:"Pricing & registration",
-      earlybird_flag:"Last day",
+      earlybird_flag:"Already passed",
       earlybird_label:"Early Bird",
-      earlybird_until:"Through today, August 26",
+      earlybird_until:"Ended August 26",
+      base_flag:"Current price",
       base_label:"Standard",
-      base_from:"Starting tomorrow",
+      base_from:"Available now",
       pricing_note:"Come solo, as a couple, or in a group. Registration happens on Luma and requires prior approval from the hosts.",
-      pricing_note2:"Special conditions for groups of 3 or more, and for tantra therapists or facilitators. You can also lock in the Early Bird price by paying just 30% upfront.",
+      pricing_note2:"Special conditions for groups of 3 or more, and for tantra therapists or facilitators. You can also secure your spot by paying just 30% upfront.",
+      pricing_note3:"If you're facing financial hardship, you can always reach out and tell us your situation, and we'll see what we can do.",
       pricing_cta:"Reserve on Luma",
-      cd_labels:["days","hours","min","sec"],
-      cd_ended:"Early Bird has ended",
       location_eyebrow:"Where",
       location_heading:"Centro Cenit, Gràcia",
       location_address:"Carrer de la Mare de Déu dels Desemparats, 5 · 08012 Barcelona",
@@ -1078,11 +1073,6 @@ var facImgs = {
       '</div>';
     fg.appendChild(wide);
 
-    ["d","h","m","s"].forEach(function(u,i){
-      var lbl = document.getElementById("cd-"+u+"-l");
-      if(lbl) lbl.textContent = d.cd_labels[i];
-    });
-
     var faqList = document.getElementById("faq-list");
     faqList.innerHTML = "";
     d.faq_items.forEach(function(item){
@@ -1135,34 +1125,6 @@ var facImgs = {
   });
 
   render("es");
-
-  // countdown to end of Aug 26, 2026 (Europe/Madrid)
-  var deadline = new Date("2026-08-26T23:59:59+02:00").getTime();
-  function tick(){
-    var now = Date.now();
-    var diff = deadline - now;
-    var box = document.getElementById("countdown");
-    if(diff <= 0){
-      box.innerHTML = "";
-      var span = document.createElement("span");
-      span.className = "price-when";
-      span.textContent = i18n[current].cd_ended;
-      box.appendChild(span);
-      return;
-    }
-    var s = Math.floor(diff/1000);
-    var days = Math.floor(s/86400); s -= days*86400;
-    var hours = Math.floor(s/3600); s -= hours*3600;
-    var mins = Math.floor(s/60); s -= mins*60;
-    var secs = s;
-    var dEl = document.getElementById("cd-d");
-    var hEl = document.getElementById("cd-h");
-    var mEl = document.getElementById("cd-m");
-    var sEl = document.getElementById("cd-s");
-    if(dEl){ dEl.textContent = days; hEl.textContent = String(hours).padStart(2,"0"); mEl.textContent = String(mins).padStart(2,"0"); sEl.textContent = String(secs).padStart(2,"0"); }
-  }
-  tick();
-  setInterval(tick, 1000);
 
   // parallax on hero background
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
